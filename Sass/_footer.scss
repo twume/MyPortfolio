@@ -1,0 +1,15 @@
+@import "valiables";
+
+/* *************************** */
+/*  footer                     */
+/* *************************** */
+.footer {
+  background-color: $footerColor;
+  &__txt {
+    display: block;
+    padding: 18px 0;
+    text-align: center;
+    color: $mainTxtColor;
+    font-size: 1rem;
+  }
+}

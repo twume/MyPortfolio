@@ -1,0 +1,203 @@
+@import "init";
+@import "valiables";
+
+/* *************************** */
+/*  共通処理                   */
+/* *************************** */
+.flex {
+  @include flex(space-between);
+}
+
+// header
+@import "header";
+
+/* *************************** */
+/*  fv                         */
+/* *************************** */
+.fv {
+  height: 59vh;
+  &::after {
+    display: block;
+    content: "";
+    width: 54.1vw;
+    height: 59vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $fvBackColor;
+    z-index: -5;
+  }
+  &__wrapper {
+    position: relative;
+    width: 76.5vw;
+    height: 43vh;
+    @include bg("../img/heading-img_contact.png");
+  }
+  &__copy {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(40%, -50%);
+    color: $mainTxtColor;
+  }
+  &__copy-txt {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+  &__copy-ttl {
+    font-size: 7.2rem;
+  }
+}
+
+@include mq() {
+  .fv {
+    &::after {
+      width: 52.8vw;
+      height: 60vh;
+    }
+    &__wrapper {
+      width: 75.2vw;
+      height: 51.6vh;
+    }
+    &__copy {
+      transform: translate(30%, -80%);
+    }
+    &__copy-txt {
+      font-size: 1.6rem;
+    }
+    &__copy-ttl {
+      font-size: 5.2rem;
+    }
+  }
+}
+@include mq(sm) {
+  .fv {
+    &::after {
+      width: 52.8vw;
+      height: 54.7vh;
+    }
+    &__wrapper {
+      width: 76.5vw;
+      height: 40.5vh;
+    }
+    &__copy {
+      min-width: 289px;
+      transform: translate(20%, -50%);
+    }
+  }
+}
+
+/* *************************** */
+/*  contact                   */
+/* *************************** */
+.contact {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 120px 0;
+  &__box {
+    padding: 0 50px;
+  }
+  &__wrapper {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    max-width: 700px;
+  }
+  &__txt {
+    margin-bottom: 55px;
+  }
+  &__list {
+    margin-bottom: 42px;
+    &--last {
+      text-align: center;
+    }
+  }
+  &__ttl {
+    margin-bottom: 8px;
+    &:first-child {
+      margin-bottom: 18px;
+    }
+  }
+  &__chklist {
+    display: inline-block;
+    margin-right: 50px;
+    &--last {
+      margin-right: 0;
+    }
+  }
+  &__var {
+    margin-right: 10px;
+  }
+  &__input {
+    // width: 700px;
+    width: 100%;
+    padding: 9px;
+    font-size: 1.9rem;
+    &--txtare {
+      padding: 11px;
+      resize: none;
+    }
+  }
+  &__privacy {
+    // width: 700px;
+    height: 252px;
+    overflow: auto;
+    padding: 11px;
+    border: solid 1px #000000;
+  }
+  &__check {
+    display: inline-block;
+    transform: scale(1.2, 1.2);
+    margin-right: 10px;
+  }
+  &__send {
+    display: block;
+    width: 160px;
+    height: 36px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    line-height: 36px;
+    color: $mainTxtColor;
+    background-color: $btnBack;
+    border: none;
+  }
+}
+
+@include mq() {
+  .contact {
+    max-width: 718px;
+    padding: 135px 0 197px;
+    &__wrapper {
+      max-width: 668px;
+    }
+    &__txt {
+      margin-bottom: 18px;
+    }
+  }
+}
+@include mq(sm) {
+  .contact {
+    max-width: 345px;
+    padding: 80px 0;
+    &__box {
+      padding: 0 30px;
+    }
+    &__wrapper {
+      max-width: 668px;
+      font-size: 1.4rem;
+    }
+    &__chklist {
+      display: block;
+      margin: 0 0 14px;
+    }
+    &__list {
+      margin-bottom: 38px;
+    }  
+    &__txt {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+
+@import "footer";

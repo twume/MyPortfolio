@@ -1,0 +1,311 @@
+@import "init";
+@import "valiables";
+
+/* *************************** */
+/*  共通処理                   */
+/* *************************** */
+.flex {
+  @include flex(space-between);
+}
+
+// header
+@import "header";
+
+/* *************************** */
+/*  fv                         */
+/* *************************** */
+.fv {
+  height: 59vh;
+  &::after {
+    display: block;
+    content: "";
+    width: 54.1vw;
+    height: 59vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $fvBackColor;
+    z-index: -5;
+  }
+  &__wrapper {
+    position: relative;
+    width: 76.5vw;
+    height: 43vh;
+    @include bg("../img/heading-img.png");
+  }
+  &__copy {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(40%, -50%);
+    color: $mainTxtColor;
+  }
+  &__copy-txt {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+  &__copy-ttl {
+    font-size: 7.2rem;
+  }
+}
+
+@include mq() {
+  .fv {
+    &::after {
+      width: 73.1vw;
+      height: 60vh;
+    }
+    &__wrapper {
+      width: 78vw;
+      height: 51.6vh;
+    }
+    &__copy {
+      transform: translate(30%, -50%);
+    }
+    &__copy-txt {
+      font-size: 1.6rem;
+    }
+    &__copy-ttl {
+      font-size: 5.2rem;
+    }
+  }
+}
+@include mq(sm) {
+  .fv {
+    &::after {
+      width: 52.8vw;
+      height: 51.7vh;
+    }
+    &__wrapper {
+      width: 76.5vw;
+      height: 44.6vh;
+    }
+    &__copy {
+      min-width: 289px;
+      transform: translate(20%, -50%);
+    }
+  }
+}
+
+/* *************************** */
+/*  contents                   */
+/* *************************** */
+.contents {
+  padding-top: 120px;
+  &__box {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+  &__wrapper {
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  &__ttl {
+    margin-bottom: 30px;
+    font-size: 3.2rem;
+  }
+  &__txt {
+    font-size: 1.6rem;
+  }
+}
+
+@include mq() {
+  .contents {
+    padding-top: 80px;
+    &__lists {
+      width: 100%;
+    }
+    &__wrapper {
+      display: block;
+    }
+  }
+}
+@include mq(sm) {
+  .contents {
+    &__wrapper {
+      padding: 0 15px;
+    }
+    &__lists {
+      width: 100%;
+    }
+    &__list-item {
+      font-size: 1.2rem;
+    }
+  }
+}
+/* *************************** */
+/*  vision                     */
+/* *************************** */
+.vision {
+  &__wrapper {
+    padding-left: 20.5%;
+  }
+  &__ttl {
+    margin-bottom: 25px;
+  }
+  &__main-txt {
+    display: block;
+    margin-bottom: 27px;
+    font-size: 2.4rem;
+  }
+  &__txt {
+    font-size: 1.6rem;
+    line-height: 2;
+  }
+}
+
+@include mq() {
+  .vision {
+    &__main-txt {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@include mq(sm) {
+  .vision {
+    &__wrapper {
+      padding: 0 15px;
+    }
+    &__txt {
+      font-size: 1.4rem;
+    }
+  }
+}
+/* *************************** */
+/*  message                    */
+/* *************************** */
+.message {
+  &__wrapper {
+    position: relative;
+    padding-top: 144px;
+  }
+  &__img {
+    max-width: 38.1%;
+    position: absolute;
+    top: 0;
+    left: 30px;
+  }
+  &__wrap--last {
+    width: 70%;
+    margin-left: auto;
+    padding: 120px 0 90px;
+    background-color: $contentsBack;
+  }
+  &__ttl {
+    width: 51.9%;
+    margin: 0 auto 30px;
+  }
+  &__txt {
+    width: 51.9%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2;
+  }
+}
+
+@include mq() {
+  .message {
+    &__wrapper {
+      padding-top: 131px;
+    }
+    &__img {
+      max-width: 41.6%;
+      min-width: 320px;
+    }
+    &__wrap--last {
+      min-width: 290px;
+      padding: 109px 0 78px;
+    }
+    &__ttl {
+      width: 83.8%;
+    }
+    &__txt {
+      width: 83.8%;
+    }
+  }
+}
+@include mq(sm) {
+  .message {
+    &__wrapper {
+      padding-top: 129px;
+      width: 100%;
+    }
+    &__img {
+      max-width: 90.6%;
+      left: 0;
+    }
+    &__wrap--last {
+      width: 100%;
+      padding: 126px 0 80px;
+      background-color: $contentsBack;
+    }
+    &__ttl {
+      width: 83.4%;
+    }
+    &__txt {
+      width: 83.4%;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/* *************************** */
+/*  company                    */
+/* *************************** */
+.company {
+  padding-bottom: 120px;
+  &__lists {
+    border-top: solid 1px $borderColor;
+  }
+  &__list {
+    width: 72.7%;
+    margin-left: auto;
+    margin-bottom: 17px;
+    padding: 18px 0;
+    border-bottom: 1px solid $borderColor;
+    line-height: 1.3;
+    &--last {
+      margin-bottom: 40px;
+    }
+  }
+  &__list-name {
+    display: inline-block;
+    width: 140px;
+    margin-right: 4px;
+  }
+  &__list-item {
+    display: inline-block;
+  }
+  &__img {
+    width: 100%;
+    height: 360px;
+    @include bg("../img/マスクグループ 8.png");
+  }
+}
+@include mq() {
+  .company {
+    padding-bottom: 80px;
+    &__list {
+      width: 95.7%;
+    }
+    &__img {
+      height: 230px;
+    }
+  }
+}
+
+@include mq(sm) {
+  .company {
+    &__list {
+      width: 100%;
+    }
+    &__img{
+      height: 470px;
+    }
+  }
+}
+
+@import "footer";

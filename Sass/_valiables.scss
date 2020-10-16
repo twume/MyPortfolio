@@ -1,0 +1,58 @@
+
+$mainTxtColor: #ffffff;
+$fvBackColor: #222222;
+$btnBack: #000000;
+$coverColor: #222222;
+$txtColor: #333333;
+$contentsBack: #f0f0f0;
+$dateColor: #cecece;
+$borderColor: #dddddd;
+$footerColor: #525252;
+
+@mixin flex($position) {
+  display: flex;
+  justify-content: $position;
+  align-items: center;
+}
+
+@mixin bg($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+$breakpoints: (
+  "sm": "screen and (max-width: 375px)",
+  "md": "screen and (max-width: 768px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/* font設定 */
+.fontMontEx {
+  font-family: "Montserrat";
+  font-weight: bold;
+  line-height: 1.2;
+}
+.fontYugoBo {
+  font-family: "YuGothic";
+  font-weight: bold;
+}
+.fontMontBo {
+  font-weight: bold;
+}
+.fontNotoRe {
+  font-family: "Noto Sans JP";
+}
+.fontYugoRe {
+  font-family: "YuGothic";
+  font-weight: normal;
+}
+.fontMoRe {
+  font-family: "Montserrat";
+}

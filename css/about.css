@@ -1,0 +1,572 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Noto Sans JP', 'YuGothic';
+  letter-spacing: 0;
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.4em;
+}
+
+/* font設定 */
+.fontMontEx {
+  font-family: "Montserrat";
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.fontYugoBo {
+  font-family: "YuGothic";
+  font-weight: bold;
+}
+
+.fontMontBo {
+  font-weight: bold;
+}
+
+.fontNotoRe {
+  font-family: "Noto Sans JP";
+}
+
+.fontYugoRe {
+  font-family: "YuGothic";
+  font-weight: normal;
+}
+
+.fontMoRe {
+  font-family: "Montserrat";
+}
+
+/* *************************** */
+/*  共通処理                   */
+/* *************************** */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* *************************** */
+/*  header                     */
+/* *************************** */
+.header {
+  width: 100%;
+  padding: 30px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  color: #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header__svg {
+  position: relative;
+  z-index: 50;
+}
+
+.header__right {
+  cursor: pointer;
+}
+
+.header__icons {
+  position: relative;
+  z-index: 50;
+  height: 10;
+  margin-right: 7px;
+}
+
+.header__icon {
+  width: 22px;
+  height: 1px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.header__icon--last {
+  margin-bottom: 0;
+}
+
+.header__icon-txt {
+  position: relative;
+  z-index: 50;
+  font-size: 1rem;
+}
+
+.header__cover {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: #0f0f0f;
+  opacity: 0.6;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.header__menu {
+  display: none;
+  position: absolute;
+  width: 30%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #0f0f0f;
+  opacity: 0.95;
+}
+
+.header__menu-wrap {
+  width: 100%;
+  height: 100vh;
+  padding-top: 180px;
+  text-align: center;
+}
+
+.header__menu-logo {
+  margin-bottom: 40px;
+}
+
+.header__menu-list {
+  margin-bottom: 30px;
+}
+
+.header__menu-list--last {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 33.8px 4%;
+  }
+  .header__svg {
+    width: 189px;
+  }
+  .header__menu {
+    width: 60%;
+  }
+  .header__menu-logo {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    padding: 19.8px 4%;
+  }
+  .header__menu {
+    width: 70%;
+  }
+  .header__menu-list {
+    margin-bottom: 20px;
+  }
+  .header__menu-list--last {
+    margin-bottom: 0;
+  }
+}
+
+/* *************************** */
+/*  fv                         */
+/* *************************** */
+.fv {
+  height: 59vh;
+}
+
+.fv::after {
+  display: block;
+  content: "";
+  width: 54.1vw;
+  height: 59vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  z-index: -5;
+}
+
+.fv__wrapper {
+  position: relative;
+  width: 76.5vw;
+  height: 43vh;
+  background-image: url("../img/heading-img.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fv__copy {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(40%, -50%);
+          transform: translate(40%, -50%);
+  color: #ffffff;
+}
+
+.fv__copy-txt {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  line-height: 1.35;
+}
+
+.fv__copy-ttl {
+  font-size: 7.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .fv::after {
+    width: 73.1vw;
+    height: 60vh;
+  }
+  .fv__wrapper {
+    width: 78vw;
+    height: 51.6vh;
+  }
+  .fv__copy {
+    -webkit-transform: translate(30%, -50%);
+            transform: translate(30%, -50%);
+  }
+  .fv__copy-txt {
+    font-size: 1.6rem;
+  }
+  .fv__copy-ttl {
+    font-size: 5.2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .fv::after {
+    width: 52.8vw;
+    height: 51.7vh;
+  }
+  .fv__wrapper {
+    width: 76.5vw;
+    height: 44.6vh;
+  }
+  .fv__copy {
+    min-width: 289px;
+    -webkit-transform: translate(20%, -50%);
+            transform: translate(20%, -50%);
+  }
+}
+
+/* *************************** */
+/*  contents                   */
+/* *************************** */
+.contents {
+  padding-top: 120px;
+}
+
+.contents__box {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.contents__wrapper {
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contents__ttl {
+  margin-bottom: 30px;
+  font-size: 3.2rem;
+}
+
+.contents__txt {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contents {
+    padding-top: 80px;
+  }
+  .contents__lists {
+    width: 100%;
+  }
+  .contents__wrapper {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .contents__wrapper {
+    padding: 0 15px;
+  }
+  .contents__lists {
+    width: 100%;
+  }
+  .contents__list-item {
+    font-size: 1.2rem;
+  }
+}
+
+/* *************************** */
+/*  vision                     */
+/* *************************** */
+.vision__wrapper {
+  padding-left: 20.5%;
+}
+
+.vision__ttl {
+  margin-bottom: 25px;
+}
+
+.vision__main-txt {
+  display: block;
+  margin-bottom: 27px;
+  font-size: 2.4rem;
+}
+
+.vision__txt {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .vision__main-txt {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .vision__wrapper {
+    padding: 0 15px;
+  }
+  .vision__txt {
+    font-size: 1.4rem;
+  }
+}
+
+/* *************************** */
+/*  message                    */
+/* *************************** */
+.message__wrapper {
+  position: relative;
+  padding-top: 144px;
+}
+
+.message__img {
+  max-width: 38.1%;
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+
+.message__wrap--last {
+  width: 70%;
+  margin-left: auto;
+  padding: 120px 0 90px;
+  background-color: #f0f0f0;
+}
+
+.message__ttl {
+  width: 51.9%;
+  margin: 0 auto 30px;
+}
+
+.message__txt {
+  width: 51.9%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .message__wrapper {
+    padding-top: 131px;
+  }
+  .message__img {
+    max-width: 41.6%;
+    min-width: 320px;
+  }
+  .message__wrap--last {
+    min-width: 290px;
+    padding: 109px 0 78px;
+  }
+  .message__ttl {
+    width: 83.8%;
+  }
+  .message__txt {
+    width: 83.8%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .message__wrapper {
+    padding-top: 129px;
+    width: 100%;
+  }
+  .message__img {
+    max-width: 90.6%;
+    left: 0;
+  }
+  .message__wrap--last {
+    width: 100%;
+    padding: 126px 0 80px;
+    background-color: #f0f0f0;
+  }
+  .message__ttl {
+    width: 83.4%;
+  }
+  .message__txt {
+    width: 83.4%;
+    font-size: 1.4rem;
+  }
+}
+
+/* *************************** */
+/*  company                    */
+/* *************************** */
+.company {
+  padding-bottom: 120px;
+}
+
+.company__lists {
+  border-top: solid 1px #dddddd;
+}
+
+.company__list {
+  width: 72.7%;
+  margin-left: auto;
+  margin-bottom: 17px;
+  padding: 18px 0;
+  border-bottom: 1px solid #dddddd;
+  line-height: 1.3;
+}
+
+.company__list--last {
+  margin-bottom: 40px;
+}
+
+.company__list-name {
+  display: inline-block;
+  width: 140px;
+  margin-right: 4px;
+}
+
+.company__list-item {
+  display: inline-block;
+}
+
+.company__img {
+  width: 100%;
+  height: 360px;
+  background-image: url("../img/マスクグループ 8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .company {
+    padding-bottom: 80px;
+  }
+  .company__list {
+    width: 95.7%;
+  }
+  .company__img {
+    height: 230px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .company__list {
+    width: 100%;
+  }
+  .company__img {
+    height: 470px;
+  }
+}
+
+/* font設定 */
+.fontMontEx {
+  font-family: "Montserrat";
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.fontYugoBo {
+  font-family: "YuGothic";
+  font-weight: bold;
+}
+
+.fontMontBo {
+  font-weight: bold;
+}
+
+.fontNotoRe {
+  font-family: "Noto Sans JP";
+}
+
+.fontYugoRe {
+  font-family: "YuGothic";
+  font-weight: normal;
+}
+
+.fontMoRe {
+  font-family: "Montserrat";
+}
+
+/* *************************** */
+/*  footer                     */
+/* *************************** */
+.footer {
+  background-color: #525252;
+}
+
+.footer__txt {
+  display: block;
+  padding: 18px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+}

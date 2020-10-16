@@ -1,0 +1,324 @@
+@import "init";
+@import "valiables";
+
+/* *************************** */
+/*  共通処理                   */
+/* *************************** */
+.flex {
+  @include flex(space-between);
+}
+
+// header
+@import "header";
+
+/* *************************** */
+/*  fv                         */
+/* *************************** */
+.fv {
+  height: 100vh;
+  &::after {
+    display: block;
+    content: "";
+    width: 54.1vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $fvBackColor;
+    z-index: -5;
+  }
+  &__wrapper {
+    position: relative;
+    width: 76.5vw;
+    height: 86.5vh;
+    @include bg("../img/kv-img.png");
+  }
+  &__copy {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    color: $mainTxtColor;
+  }
+  &__copy-txt {
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  &__copy-ttl {
+    font-size: 7.2rem;
+  }
+}
+
+@include mq() {
+  .fv {
+    &::after {
+      width: 73.1vw;
+    }
+    &__wrapper {
+      width: 78vw;
+      height: 86.9vh;
+    }
+    &__copy {
+      transform: translate(25%, -50%);
+    }
+    &__copy-txt {
+      font-size: 1.6rem;
+    }
+    &__copy-ttl {
+      font-size: 5.6rem;
+    }
+  }
+}
+@include mq(sm) {
+  &::after {
+    width: 75.4vw;
+  }
+  .fv {
+    &__wrapper {
+      width: 76.5vw;
+      height: 86.5vh;
+    }
+    &__copy {
+      transform: translate(15%, -50%);
+    }
+  }
+}
+
+/* *************************** */
+/*  contents                   */
+/* *************************** */
+.contents {
+  &__box {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  &__wrapper {
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  &__ttl {
+    margin-bottom: 30px;
+    font-size: 3.2rem;
+  }
+  &__txt {
+    font-size: 1.6rem;
+  }
+  &__btn {
+    display: block;
+    width: 160px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 1.2rem;
+    background-color: $btnBack;
+  }
+  &__lists {
+    width: 700px;
+    margin-left: auto;
+  }
+  &__list-time {
+    color: $dateColor;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  &__list-item {
+    margin-bottom: 29px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $borderColor;
+    line-height: 1.35;
+    &--last {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include mq() {
+  .contents {
+    &__lists {
+      width: 100%;
+    }
+    &__wrapper {
+      display: block;
+    }
+  }
+}
+@include mq(sm) {
+  .contents {
+    &__wrapper {
+      padding: 0 15px;
+    }
+    &__ttl {
+      font-size: 2.8rem;
+    }
+    &__lists {
+      width: 100%;
+    }
+    &__list-item {
+      font-size: 1.2rem;
+    }
+  }
+}
+/* *************************** */
+/*  about us                   */
+/* *************************** */
+.about {
+  position: relative;
+  padding-top: 120px;
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    background-color: $contentsBack;
+  }
+  &__wrapper {
+    padding: 110px 450px 110px 50px;
+    @include bg("../img/about-img.png");
+  }
+  &__wrap {
+    padding: 50px 30px;
+    background-color: $mainTxtColor;
+    opacity: 0.95;
+  }
+  &__txt {
+    margin-bottom: 30px;
+    line-height: 2;
+  }
+}
+
+@include mq() {
+  .about {
+    padding-top: 80px;
+    &__wrapper {
+      padding: 60px 89px;
+    }
+  }
+}
+
+@include mq(sm) {
+  .about {
+    padding-top: 78px;
+    &__wrapper {
+      padding: 50px 15px;
+    }
+    &__txt {
+      font-size: 1.4rem;
+    }
+  }
+}
+/* *************************** */
+/*  works                      */
+/* *************************** */
+.works {
+  padding: 80px 0 60px;
+  background-color: $contentsBack;
+  &__wrap {
+    width: 47.3%;
+  }
+  &__img {
+    margin-bottom: 27px;
+  }
+  &__txt {
+    margin-bottom: 28px;
+  }
+}
+
+@include mq() {
+  .works {
+    padding: 60px 0 40px;
+    &__wrap {
+      width: 67.7%;
+      min-width: 345px;
+      margin-bottom: 80px;
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+@include mq(sm) {
+  .works {
+    padding: 40px 0 40px;
+    &__wrap {
+      width: 67.7%;
+      min-width: 290px;
+      margin-bottom: 40px;
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* *************************** */
+/*  topics                      */
+/* *************************** */
+.topics {
+  padding: 60px 0;
+  &__btn {
+    margin-left: auto;
+  }
+}
+
+@include mq() {
+  .topics {
+    padding: 40px 0;
+    &__btn {
+      margin-left: initial;
+    }
+  }
+}
+
+/* *************************** */
+/*  contact                    */
+/* *************************** */
+.contact {
+  padding: 60px 0 120px;
+  background-color: $contentsBack;
+  &__wrapper {
+    flex-direction: row-reverse;
+  }
+  &__wrap {
+    width: 40%;
+  }
+  &__img {
+    width: 52.7%;
+  }
+  &__txt {
+    margin-bottom: 30px;
+    line-height: 2;
+  }
+}
+
+@include mq() {
+  .contact {
+    padding: 40px 0 80px;
+    &__wrap {
+      width: 66.4%;
+      min-width: 345px;
+    }
+    &__img {
+      width: 67.7%;
+      min-width: 345px;
+      margin-bottom: 30px;
+    }
+  }
+}
+@include mq(sm) {
+  .contact {
+    padding: 40px 0 40px;
+    &__wrap {
+      width: 66.4%;
+      min-width: 290px;
+    }
+    &__img {
+      width: 67.7%;
+      min-width: 290px;
+    }
+  }
+}
+
+@import "footer";
